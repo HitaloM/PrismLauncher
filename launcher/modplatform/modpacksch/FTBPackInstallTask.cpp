@@ -299,7 +299,7 @@ void PackInstallTask::downloadPack()
         if (file.serverOnly || file.url.isEmpty())
             continue;
 
-        auto path = FS::PathCombine(m_stagingPath, ".minecraft", file.path, file.name);
+        auto path = FS::PathCombine(m_stagingPath, "minecraft", file.path, file.name);
         qDebug() << "Will try to download" << file.url << "to" << path;
 
         QFileInfo file_info(file.name);
@@ -367,7 +367,7 @@ void PackInstallTask::copyBlockedMods()
             continue;
         }
 
-        auto dest_path = FS::PathCombine(m_stagingPath, ".minecraft", mod.targetFolder, mod.name);
+        auto dest_path = FS::PathCombine(m_stagingPath, "minecraft", mod.targetFolder, mod.name);
 
         setStatus(tr("Copying Blocked Mods (%1 out of %2 are done)").arg(QString::number(i), QString::number(total)));
 
